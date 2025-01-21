@@ -31,11 +31,15 @@
         android:roundIcon="@drawable/banner"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service
-            android:name="com.touchmapper.app.overlay.OverlayService"
-            android:foregroundServiceType="specialUse"
-            android:permission="android.permission.SYSTEM_ALERT_WINDOW"
+        <activity
+            android:name=".view.input_test.InputListenerActivity"
             android:exported="false" />
+
+        <service
+            android:name=".overlay.OverlayService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW" />
 
         <provider
             android:name="rikka.shizuku.ShizukuProvider"
@@ -46,7 +50,7 @@
             android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
 
         <activity
-            android:name="com.touchmapper.app.view.home.HomeActivity"
+            android:name=".view.home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

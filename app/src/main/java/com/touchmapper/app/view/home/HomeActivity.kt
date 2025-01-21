@@ -1,6 +1,7 @@
 package com.touchmapper.app.view.home
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -13,6 +14,7 @@ import com.touchmapper.app.databinding.ActivityMainBinding
 import com.touchmapper.app.overlay.OverlayService
 import com.touchmapper.app.util.edgeToEdge
 import com.touchmapper.app.view.controller_test.ControllerTestActivity
+import com.touchmapper.app.view.input_test.InputListenerActivity
 
 class HomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by viewModels()
@@ -75,6 +77,12 @@ class HomeActivity : AppCompatActivity() {
         }
         binding.buttonLaunchOverlay.setOnClickListener {
             OverlayService.start(this@HomeActivity)
+        }
+        binding.buttonInputListener.setOnClickListener {
+            startActivity(Intent(
+                this@HomeActivity,
+                InputListenerActivity::class.java
+            ))
         }
     }
 }
